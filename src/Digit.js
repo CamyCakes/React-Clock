@@ -3,26 +3,27 @@ import React from 'react'
 class Digit extends React.Component{
 
 	render(){
-		let number = this.props.number;
-		let numberRender = {
-			'0' : [ <TopLeftCell o='1' />, <TopCell o='1' />, <TopRightCell o='1' />, <BottomLeftCell o='1' />, <MiddleCell o='0.1' />, <BottomRightCell o='1'  />, <BottomCell o='1' /> ],
-			'1' : [ <TopLeftCell o='0.1' />, <TopCell o='0.1' />, <TopRightCell o='1' />, <BottomLeftCell o='0.1' />, <MiddleCell o='0.1' />, <BottomRightCell o='1' />, <BottomCell o='0.1' /> ],
-			'2' : [ <TopLeftCell o='0.1' />, <TopCell o='1' />, <TopRightCell o='1' />, <BottomLeftCell o='1' />, <MiddleCell o='1' />, <BottomRightCell o='0.1' />, <BottomCell o='1' /> ],
-			'3' : [ <TopLeftCell o='0.1' />, <TopCell o='1' />, <TopRightCell o='1' />, <BottomLeftCell o='0.1' />, <MiddleCell o='1' />, <BottomRightCell o='1' />, <BottomCell o='1' /> ],
-			'4' : [ <TopLeftCell o='1' />, <TopCell o='0.1' />, <TopRightCell o='1' />, <BottomLeftCell o='0.1' />, <MiddleCell o='1' />, <BottomRightCell o='1' />, <BottomCell o='0.1' /> ],
-			'5' : [ <TopLeftCell o='1' />, <TopCell o='1' />, <TopRightCell o='0.1' />, <BottomLeftCell o='0.1' />, <MiddleCell o='1' />, <BottomRightCell o='1' />, <BottomCell o='1' /> ],
-			'6' : [ <TopLeftCell o='1' />, <TopCell o='1' />, <TopRightCell o='0.1' />, <BottomLeftCell o='1' />, <MiddleCell o='1' />, <BottomRightCell o='1' />, <BottomCell o='1' /> ],
-			'7' : [ <TopLeftCell o='0.1' />, <TopCell o='1' />, <TopRightCell o='1' />, <BottomLeftCell o='0.1' />, <MiddleCell o='0.1' />, <BottomRightCell o='1' />, <BottomCell o='0.1' /> ],
-			'8' : [ <TopLeftCell o='1' />, <TopCell o='1' />, <TopRightCell o='1' />, <BottomLeftCell o='1' />, <MiddleCell o='1' />, <BottomRightCell o='1' />, <BottomCell o='1' /> ],
-			'9' : [ <TopLeftCell o='1' />, <TopCell o='1' />, <TopRightCell o='1' />, <BottomLeftCell o='0.1' />, <MiddleCell o='1' />, <BottomRightCell o='1' />, <BottomCell o='1' /> ],
-		}
-
-		let getMarkup = numberRender[ number ];		
+		let number = parseInt(this.props.number);
+		let numberRenderer = [
+			[ <TopLeftCell o='1' />, <TopCell o='1' />, <TopRightCell o='1' />, <BottomLeftCell o='1' />, <MiddleCell o='0.1' />, <BottomRightCell o='1'  />, <BottomCell o='1' /> ],
+			[ <TopLeftCell o='0.1' />, <TopCell o='0.1' />, <TopRightCell o='1' />, <BottomLeftCell o='0.1' />, <MiddleCell o='0.1' />, <BottomRightCell o='1' />, <BottomCell o='0.1' /> ],
+			[ <TopLeftCell o='0.1' />, <TopCell o='1' />, <TopRightCell o='1' />, <BottomLeftCell o='1' />, <MiddleCell o='1' />, <BottomRightCell o='0.1' />, <BottomCell o='1' /> ],
+			[ <TopLeftCell o='0.1' />, <TopCell o='1' />, <TopRightCell o='1' />, <BottomLeftCell o='0.1' />, <MiddleCell o='1' />, <BottomRightCell o='1' />, <BottomCell o='1' /> ],
+			[ <TopLeftCell o='1' />, <TopCell o='0.1' />, <TopRightCell o='1' />, <BottomLeftCell o='0.1' />, <MiddleCell o='1' />, <BottomRightCell o='1' />, <BottomCell o='0.1' /> ],
+			[ <TopLeftCell o='1' />, <TopCell o='1' />, <TopRightCell o='0.1' />, <BottomLeftCell o='0.1' />, <MiddleCell o='1' />, <BottomRightCell o='1' />, <BottomCell o='1' /> ],
+			[ <TopLeftCell o='1' />, <TopCell o='1' />, <TopRightCell o='0.1' />, <BottomLeftCell o='1' />, <MiddleCell o='1' />, <BottomRightCell o='1' />, <BottomCell o='1' /> ],
+			[ <TopLeftCell o='0.1' />, <TopCell o='1' />, <TopRightCell o='1' />, <BottomLeftCell o='0.1' />, <MiddleCell o='0.1' />, <BottomRightCell o='1' />, <BottomCell o='0.1' /> ],
+			[ <TopLeftCell o='1' />, <TopCell o='1' />, <TopRightCell o='1' />, <BottomLeftCell o='1' />, <MiddleCell o='1' />, <BottomRightCell o='1' />, <BottomCell o='1' /> ],
+			[ <TopLeftCell o='1' />, <TopCell o='1' />, <TopRightCell o='1' />, <BottomLeftCell o='0.1' />, <MiddleCell o='1' />, <BottomRightCell o='1' />, <BottomCell o='1' /> ],
+            [ <TopLeftCell o='0.1' />, <TopCell o='0.1' />, <TopRightCell o='0.1' />, <BottomLeftCell o='0.1' />, <MiddleCell o='0.1' />, <BottomRightCell o='0.1' />, <BottomCell o='0.1' /> ]
+        ]
+   
+        let digit = this.props.isFirst && number == '0' ? numberRenderer[10] : numberRenderer[number];
 
 		return( 
-			<span className="digit-cont">
-				{ getMarkup }
-			</span>
+            <span className="digit-cont" >
+                { digit }
+            </span>
 		)
 	}
 }
@@ -41,7 +42,6 @@ function TopCell(props){
 		</svg>
 	)
 }
-
 function BottomCell(props){
 	return(
 		<svg className='digit-chunk bottom' style={{opacity: + props.o }} viewBox='0 0 121.17 34.83' >
@@ -49,7 +49,6 @@ function BottomCell(props){
 		</svg>
 	)
 }
-
 function TopRightCell(props){
 	return(
 		<svg className='digit-chunk top-right' style={{opacity: + props.o }} viewBox='0 0 36.33 112.41' >
@@ -57,7 +56,6 @@ function TopRightCell(props){
 		</svg>
 	)
 }
-
 function TopLeftCell(props){
 	return(
 		<svg className='digit-chunk top-left' style={{opacity: + props.o }} viewBox='0 0 36.33 112.41' >
@@ -65,7 +63,6 @@ function TopLeftCell(props){
 		</svg>
 	)
 }
-
 function BottomRightCell(props){
 	return(
 		<svg className='digit-chunk bottom-right' style={{opacity: + props.o }} viewBox='0 0 36.33 112.41' >
@@ -73,7 +70,6 @@ function BottomRightCell(props){
 		</svg>
 	)
 }
-
 function BottomLeftCell(props){
 	return(
 		<svg className='digit-chunk bottom-left' style={{opacity: + props.o }} viewBox='0 0 36.33 112.41' >

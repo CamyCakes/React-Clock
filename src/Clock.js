@@ -23,12 +23,15 @@ class Clock extends React.Component{
 	}
 
 	setTime(){
-		let theTime = new Date();
+        let theTime = new Date();
+        
+        let hours = theTime.getHours();
+        let ampm = hours >= 12 ? 'pm':'am';
 
-		let hours = theTime.getHours();
 		if( hours < 10 ) hours = '0' + hours;
 		if( hours > 12 ) hours -= 12;
-		if( hours === 0 ) hours = 12;
+        if( hours === 0 ) hours = 12;
+        
 
 		let minutes = theTime.getMinutes();
 		if( minutes < 10 ) minutes = '0' + minutes;
@@ -36,7 +39,7 @@ class Clock extends React.Component{
 		let seconds =  theTime.getSeconds();
 		if( seconds < 10 ) seconds = '0' + seconds;
 
-		let ampm = hours >= 12 ? 'pm':'am';
+        
 		this.setState(()=>{
 			return {
 				hours: hours,
@@ -65,23 +68,31 @@ class Clock extends React.Component{
 		if( hours.length === 1 ){
 			hours[1] = hours[0];
 			hours[0] = '0';
-		}
+        }
+        
+        let ampm = this.state.ampm;
 		
 		return(	
-			<div className="digits">
-				<span>
-					<Digit number={ hours[0] }/> 
-					<Digit number={ hours[1] }/> 
-				</span>
-				<span>
-				<Digit number={ minutes[0] }/> 
-					<Digit number={ minutes[1] }/>
-				</span>
-				<span>
-				<Digit number={ seconds[0] } /> 
-					<Digit number={ seconds[1] }/> 
-				</span>
-			</div>
+            <div className="clock">
+	            <div className="digits">
+                    <span>
+                        <Digit number={ hours[0] } isFirst={ true }/> 
+                        <Digit number={ hours[1] }/> 
+                    </span>
+                    <span>
+                    <Digit number={ minutes[0] }/> 
+                        <Digit number={ minutes[1] }/>
+                    </span>
+                    <span>
+                        <Digit number={ seconds[0] } /> 
+                        <Digit number={ seconds[1] }/> 
+                    </span>
+                </div>
+                <span className='ampm'>
+                    { ampm }
+                </span>
+            </div>
+		
 		)
 	}
 }
