@@ -1,0 +1,92 @@
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+	  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+	  sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
+  }
+  
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}  
+
+.digit-chunk{
+    stroke-width: 2px;
+    margin: 3px;
+    position: relative;
+	filter: drop-shadow(0px 0px 15px black);	
+}
+
+.digits>span::after{
+	content: ":";
+    display: inline-block;
+    font-size: 150px;
+    position: relative;
+    top: -74px;
+	margin: 5px 10px 10px 0px;
+}
+.digits>span:last-child::after{
+	display: none;
+}
+
+.App{
+	background: #151515;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;	
+}
+
+.digit-cont{
+    display: inline-block;
+    width: 155px;
+    height: 158px;
+	margin: 0px -20px;
+	opacity: 0;
+	position: relative;
+}
+
+.digit-cont > div{
+	display: flex;
+	position: relative;
+}
+
+.digit-chunk{
+	&.top,
+	&.bottom,
+	&.middle{
+		height: 15%;
+	}
+
+	&.top-left,
+	&.top-right,
+	&.bottom-left,
+	&.bottom-right{
+		width: 15%;
+	}
+
+	&.top{
+		bottom: 38%;
+	}
+	
+	&.top-right{
+		right: 10%;
+	}
+	&.bottom-right{
+		right: 1%;
+	}
+	&.middle{
+		bottom: 41%;
+		left: 5%;
+	}
+	&.bottom{
+		bottom: 13%;
+		left: 19%;
+	}
+	&.bottom-left,
+	&.top-left{
+		left: 10%;
+	}
+}

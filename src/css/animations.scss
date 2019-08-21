@@ -1,0 +1,87 @@
+$aniDir: 3.5s;
+$timing: cubic-bezier(.25,0,.81,1);
+
+.digit-chunk,
+.digits>span::after{
+	animation-iteration-count: infinite;
+	animation-duration: $aniDir;
+	animation-timing-function: $timing;
+	transition: all .5s;
+}
+
+.digit-chunk,
+.digits>span::after{
+	animation-name: colorize;
+}
+
+$light-color: rgb(153, 34, 117);
+$stroke-light: rgb(233, 185, 218);
+
+$middle-color: rgb(81, 31, 161);
+$stroke-middle: rgb(125, 93, 175);
+
+$dark-color:  rgb(65, 90, 156);
+$stroke-dark: rgb(168, 185, 231);
+
+@for $i from 1 through 42 {
+	.digit-chunk:nth-child( #{$i} ){
+		animation-delay: -#{ $i }s;
+	};
+}
+
+@keyframes colorize{
+	0%{
+		fill: $light-color;
+		stroke: $stroke-light; 
+		color: $light-color;
+	} 
+	25%{    
+		fill: $dark-color;
+		stroke: $stroke-dark; 
+		color: $dark-color;
+	}
+	50%{
+		fill: $middle-color;
+		stroke: $stroke-middle; 
+		color: $dark-color;
+	}
+	75%{
+		fill: $dark-color;
+		stroke: $stroke-dark; 
+		color: $dark-color;
+	}
+	100%{
+		fill: $light-color;
+		stroke: $stroke-light; 
+		color: $light-color;
+	}
+}
+
+.digit-cont{
+	transform: rotate(0deg);
+	animation-name: startIn;
+	animation-duration: 1.5s;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	transition-delay: .5s;
+}
+
+@for $i from 1 through 42 {
+	.digit-cont:nth-child( #{$i} ){
+		animation-delay: #{ $i/25 }s;
+	};
+}
+
+@keyframes startIn{	
+	0%{
+		transform: rotate(20deg);
+		opacity: 0;
+		margin: -10px;
+	}
+	20%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
