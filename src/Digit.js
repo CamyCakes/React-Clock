@@ -18,7 +18,7 @@ class Digit extends React.Component{
             [ <TopLeftCell o='0.1' />, <TopCell o='0.1' />, <TopRightCell o='0.1' />, <BottomLeftCell o='0.1' />, <MiddleCell o='0.1' />, <BottomRightCell o='0.1' />, <BottomCell o='0.1' /> ]
         ]
    
-        let digit = this.props.isFirst && number === '0' ? numberRenderer[10] : numberRenderer[number];
+        let digit = (this.props.isFirst && number === 0 ) ? numberRenderer[10] : numberRenderer[number];
 
 		return( 
             <span className="digit-cont" >
