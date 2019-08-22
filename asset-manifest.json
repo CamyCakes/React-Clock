@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/react-clock/static/css/main.6c764298.chunk.css",
-    "main.js": "/react-clock/static/js/main.709d1d34.chunk.js",
-    "main.js.map": "/react-clock/static/js/main.709d1d34.chunk.js.map",
-    "runtime~main.js": "/react-clock/static/js/runtime~main.829eb890.js",
-    "runtime~main.js.map": "/react-clock/static/js/runtime~main.829eb890.js.map",
-    "static/css/2.e8d046a2.chunk.css": "/react-clock/static/css/2.e8d046a2.chunk.css",
-    "static/js/2.5fbe3172.chunk.js": "/react-clock/static/js/2.5fbe3172.chunk.js",
-    "static/js/2.5fbe3172.chunk.js.map": "/react-clock/static/js/2.5fbe3172.chunk.js.map",
-    "index.html": "/react-clock/index.html",
-    "precache-manifest.97f1c90c4eab16d76729e2ae1973585f.js": "/react-clock/precache-manifest.97f1c90c4eab16d76729e2ae1973585f.js",
-    "service-worker.js": "/react-clock/service-worker.js",
-    "static/css/2.e8d046a2.chunk.css.map": "/react-clock/static/css/2.e8d046a2.chunk.css.map",
-    "static/css/main.6c764298.chunk.css.map": "/react-clock/static/css/main.6c764298.chunk.css.map",
-    "static/media/alarm.mp3": "/react-clock/static/media/alarm.6eacbbd2.mp3"
+    "main.css": "/React-Clock/static/css/main.6c764298.chunk.css",
+    "main.js": "/React-Clock/static/js/main.709d1d34.chunk.js",
+    "main.js.map": "/React-Clock/static/js/main.709d1d34.chunk.js.map",
+    "runtime~main.js": "/React-Clock/static/js/runtime~main.d9745075.js",
+    "runtime~main.js.map": "/React-Clock/static/js/runtime~main.d9745075.js.map",
+    "static/css/2.e8d046a2.chunk.css": "/React-Clock/static/css/2.e8d046a2.chunk.css",
+    "static/js/2.eadadd97.chunk.js": "/React-Clock/static/js/2.eadadd97.chunk.js",
+    "static/js/2.eadadd97.chunk.js.map": "/React-Clock/static/js/2.eadadd97.chunk.js.map",
+    "index.html": "/React-Clock/index.html",
+    "precache-manifest.3d8b72231f3cf1be938315131b4c736b.js": "/React-Clock/precache-manifest.3d8b72231f3cf1be938315131b4c736b.js",
+    "service-worker.js": "/React-Clock/service-worker.js",
+    "static/css/2.e8d046a2.chunk.css.map": "/React-Clock/static/css/2.e8d046a2.chunk.css.map",
+    "static/css/main.6c764298.chunk.css.map": "/React-Clock/static/css/main.6c764298.chunk.css.map",
+    "static/media/alarm.mp3": "/React-Clock/static/media/alarm.6eacbbd2.mp3"
   }
 }
