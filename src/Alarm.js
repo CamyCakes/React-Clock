@@ -25,7 +25,7 @@ class Alarm extends React.Component{
     }
 
     newAlarm(){
-        let arr = [...this.state.alarms];
+        let arr = [...this.state.alarms]
         arr.push({
             alarmSet: true,
             alarmVal: '0:00 am'
@@ -36,8 +36,8 @@ class Alarm extends React.Component{
     }
 
     setAlarm( index ){
-        let arr = [...this.state.alarms];
-        arr[index].alarmSet = !arr[index].alarmSet;
+        let arr = [...this.state.alarms]
+        arr[index].alarmSet = !arr[index].alarmSet
         this.setState( {
             alarms: arr
         })
@@ -66,20 +66,21 @@ class Alarm extends React.Component{
     }
 
     soundTheAlarm(){
-        let alarm = new Audio(alarmSound);
-        alarm.play();
+        let alarm = new Audio(alarmSound)
+        alarm.currentTime = 0
+        alarm.play()
     }
 
     removeAlarm( index ){
-        let arr = [...this.state.alarms];
-        arr.splice( index, 1 );
+        let arr = [...this.state.alarms]
+        arr.splice( index, 1 )
         this.setState({
             alarms: arr
         })
     }
 
 	render(){
-        this.checkAlarm( this.props.currentTime );
+        this.checkAlarm( this.props.currentTime )
         let format = "hh:mm a"
         
         let timePickers = this.state.alarms.map(( val, index ) => {
