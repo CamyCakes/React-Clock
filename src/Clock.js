@@ -71,6 +71,7 @@ class Clock extends React.Component{
         }
         
         let ampm = this.state.ampm;
+        let currentTime = hours[0] + hours [1] + ':' + minutes[0] + minutes[1] + ' ' + ampm;
 		
 		return(	
             <div className="clock">
@@ -80,7 +81,7 @@ class Clock extends React.Component{
                         <Digit number={ hours[1] }/> 
                     </span>
                     <span>
-                    <Digit number={ minutes[0] }/> 
+                        <Digit number={ minutes[0] }/> 
                         <Digit number={ minutes[1] }/>
                     </span>
                     <span>
@@ -92,8 +93,8 @@ class Clock extends React.Component{
                     { ampm }
                 </span>
 				<Alarm 
-					currentTime={ this.state.time } 
-					soundAlarm={ ()=>{ alert('alarm!') }}/>
+					currentTime={ currentTime } 
+				/>
             </div>
 		
 		)

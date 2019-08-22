@@ -1,4 +1,78 @@
 .alarm-cont{
 	display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+    padding: 5px;
+}
+
+.alarm-cont > *{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.new-alarm-button{
+    background: #8BC34A;
+    color: white;
+    padding: 0px 70px;
+    line-height: 37px;
+    font-size: 26px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.alarm-checkbox{
+    align-self: center;
+    position: relative;
+    z-index: 5;
+    left: -25px;
+    cursor: pointer;
+}
+
+.remove-alarm{
+    color: red;
+    font-size: 24px;
+    position: relative;
+    font-weight: 800;
+    cursor: pointer;
+}
+.ant-time-picker-icon{
+    display: none;
+}
+
+.ant-time-picker-input {
+    color: rgb(255, 255, 255);
+    background-color: #000;
+    border: 1px solid;
+    border-radius: 4px;
+}
+
+.ant-time-picker-panel-input-wrap {
+    padding: 10px 2px 7px 12px;
+    font-size: 16px;
+}
+
+.ant-time-picker-panel-inner{
+    background-color: #000;
+    color: white;
+    border: solid 1px white;
+}
+.ant-time-picker-panel-input{
+    background: black;
+}
+
+.ant-time-picker-panel-select-option-selected,
+.ant-time-picker-panel-select li:hover{
+    color: black;
+}
+
+.ant-time-picker-input[disabled] {
+    color: #ffffff66;
+    text-decoration: line-through;
+    background-color: unset;
+    cursor: not-allowed;
+    opacity: 1;
 }

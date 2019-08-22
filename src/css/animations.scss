@@ -3,7 +3,8 @@ $timing: linear;
 
 .digit-chunk,
 .digits>span::after,
-.ampm{
+.ampm,
+.ant-time-picker-input{
 	animation-iteration-count: infinite;
 	animation-duration: $aniDir;
 	animation-timing-function: $timing;
@@ -15,15 +16,31 @@ $timing: linear;
 	animation-name: colorize;
 }
 
+.ant-time-picker-input:not([disabled]){
+    animation-name: alarmBorders;
+}
+
+@for $i from 1 through 7 {
+    .digit-chunk:nth-child( #{$i} ){
+		animation-delay: -#{ $i * 2 }s;
+	};
+}
+
 $color1: rgb(136, 228, 31);
 $color2: rgb(34, 226, 50);
 $color3: rgb(39, 185, 221);
 $color4: rgb(29, 120, 194);
 
-@for $i from 1 through 7 {
-	.digit-chunk:nth-child( #{$i} ){
-		animation-delay: -#{ $i * 2 }s;
-	};
+@keyframes alarmBorders{
+    0%{
+        border-color: $color1;
+    }
+    50%{
+        border-color: $color4;
+    }
+    100%{
+        border-color: $color1;
+    }
 }
 
 @keyframes colorize{
