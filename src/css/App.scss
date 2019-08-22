@@ -12,6 +12,18 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }  
 
+.App{
+	background: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	height: 100vh;	
+}
+
+.clock{
+	position: relative;
+}
+
 .ampm{
     font-size: 24px;
     font-weight: 800;
@@ -23,11 +35,10 @@ code {
 }
 
 .digit-chunk{
-    stroke-width: 2px;
-    stroke:white;
-    margin: 3px;
+	margin: 3px;
     position: relative;
-    filter: drop-shadow(0px 0px 45px white);
+	filter: drop-shadow(0px 0px 45px rgba(255, 255, 255, 0.678));
+	transition: all .25s;
 }
 
 .digits>span::after{
@@ -40,14 +51,6 @@ code {
 }
 .digits>span:last-child::after{
 	display: none;
-}
-
-.App{
-	background: #151515;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;	
 }
 
 .digit-cont{
@@ -70,34 +73,36 @@ code {
 	&.middle{
 		height: 15%;
 	}
-
 	&.top-left,
 	&.top-right,
 	&.bottom-left,
 	&.bottom-right{
 		width: 15%;
 	}
-
 	&.top{
-		bottom: 38%;
+		bottom: 37.5%;
 	}
-	
 	&.top-right{
-		right: 10%;
+		right: 12.2%;
+		bottom: 0.5%;
 	}
 	&.bottom-right{
-		right: 1%;
+		right: 5.6%;
+		bottom: 0.5%;
 	}
 	&.middle{
-		bottom: 41%;
-		left: 5%;
+		bottom: 41.1%;
+		left: 3.1%;
+		height: 16.1%;
 	}
 	&.bottom{
-		bottom: 13%;
-		left: 19%;
+		bottom: 15%;
+		height: 15.1%;
+		left: 18.8%;
 	}
 	&.bottom-left,
 	&.top-left{
-		left: 10%;
+	    bottom: 0.5%;
+    	left: 12.4%;
 	}
 }

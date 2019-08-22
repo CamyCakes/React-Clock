@@ -1,5 +1,6 @@
 import React from 'react'
 import Digit from './Digit'
+import Alarm from './Alarm'
 
 class Clock extends React.Component{
 	constructor(props){
@@ -25,27 +26,26 @@ class Clock extends React.Component{
 	setTime(){
         let theTime = new Date();
         
-        let hours = theTime.getHours();
+        let hours = Math.floor( theTime.getHours() );
         let ampm = hours >= 12 ? 'pm':'am';
 
 		if( hours < 10 ) hours = '0' + hours;
 		if( hours > 12 ) hours -= 12;
         if( hours === 0 ) hours = 12;
-        
 
-		let minutes = theTime.getMinutes();
+		let minutes = Math.floor( theTime.getMinutes() );
 		if( minutes < 10 ) minutes = '0' + minutes;
 
-		let seconds =  theTime.getSeconds();
+		let seconds =  Math.floor( theTime.getSeconds() );
 		if( seconds < 10 ) seconds = '0' + seconds;
-
         
 		this.setState(()=>{
 			return {
 				hours: hours,
 				minutes: minutes,
 				seconds: seconds,
-				ampm : ampm.toUpperCase()
+				ampm : ampm.toUpperCase(),
+				time: theTime.getTime()
 			}
 		})
 	}
@@ -91,6 +91,9 @@ class Clock extends React.Component{
                 <span className='ampm'>
                     { ampm }
                 </span>
+				<Alarm 
+					currentTime={ this.state.time } 
+					soundAlarm={ ()=>{ alert('alarm!') }}/>
             </div>
 		
 		)

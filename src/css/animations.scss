@@ -1,5 +1,5 @@
-$aniDir: 15s;
-$timing: cubic-bezier(.25,0,.81,1);
+$aniDir: 7s;
+$timing: linear;
 
 .digit-chunk,
 .digits>span::after,
@@ -15,10 +15,10 @@ $timing: cubic-bezier(.25,0,.81,1);
 	animation-name: colorize;
 }
 
-$color1: rgb(67, 150, 206);
-$color2:rgb(38, 111, 179);
-$color3:  rgb(120, 32, 235);
-$color4: rgb(235, 32, 100);
+$color1: rgb(136, 228, 31);
+$color2: rgb(34, 226, 50);
+$color3: rgb(39, 185, 221);
+$color4: rgb(29, 120, 194);
 
 @for $i from 1 through 7 {
 	.digit-chunk:nth-child( #{$i} ){
